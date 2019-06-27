@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            var arr1 = [2, 3, 1 , 44, 0, 5, 6]
+            function search(a, b) {
+                  // only one variable allow
+                  var  arr = [];
+                 // var flag = false;
+                  for (var i = 0; i < arr1.length; i++) {
+                        switch (arr1[i]){
+                              case a :
+                              arr.push(arr1[i])
+                        }
+                        switch (arr1[i]){
+                              case b :
+                              arr.push(arr1[i])
+                        }
+                  }
+                  if(arr.length === 2 ){
+                        var ans = a + " " + b + " Both are Found"
+                  }
+                  else if(arr.length == 1){
+                        var ans  = arr[0] + " Found"
+                  }
+                  else{
+                        var ans = " Not Found"
+                  }
+                  return ans;
+                  console.log(search(1,44)) // both found
+             console.log(search(3,2)) // both found
+             console.log(search(1,220)) // 1 found
+             console.log(search(0,6)) // 6 found
+             console.log(search(15,33)) // not found
+                        // if (arr1[i] === arguments[0]) {
+                        //       flag = true}
+                        //       if(flag === true){
+                        //             console.log("found nkl "+arguments[0]+"&"+i);
+                        //             break
+                        //       }
+                        //     //  console.log("found nkl "+arguments[0]+"&"+i)         
+                        
+                        // else{
+                        //       console.log("hamza");
+                        //       break
+                        // }
+                  //      else if (arguments[1] === arr1[i]) {
+                  //             //if (flag === true) {
+                  //                   console.log("Both Found "+"&"+i);
+                  //                   break;
+                  //           //  }
+                  //      }
+                        
+                  //       } else if (arguments[0] === arr1[i]) {
+
+                  //             console.log(arguments[0] +"And "+arguments[1] +" Found" + flag);
+                  //             break;
+                  //       } else if (arguments[1] === arr1[i]) {
+
+                  //             console.log(arguments[1] + " Found" + flag);
+                  //             break;
+                  //       }
+                        // else{
+                        //       console.log("Not Found");
+                        //       break;
+                        // }
+                       
+                        // i
+                        // return only one value
+                  }
+            
+            // search(2, 44)
+            // search(55, 6);
+            // search(154, 0)
+            // search(241, 5)
+            // search(1, 1)
+            // search(44, 2)
+            // search(44, 2)
+
+
+
+
+             console.log(search(1,44)) // both found
+             console.log(search(3,2)) // both found
+             console.log(search(1,220)) // 1 found
+             console.log(search(0,6)) // 6 found
+             console.log(search(15,33)) // not found
+            //   search(44,8) // 1 found
+            //   search(15,6) // 6 found
+            //    search(15,33) //not found
+      </script>
+</body>
+
+</html>

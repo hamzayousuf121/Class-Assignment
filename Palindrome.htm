@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Assigment one </h1>
+    <h2>Palindrome Words Check</h2>
+    <script>
+        function palindrome(string) {
+            var re = /[\W_]/g;
+            var lowRegStr = string.toLowerCase().replace(re, '');
+            var reverseStr = lowRegStr.split('').reverse().join(''); 
+            return reverseStr === lowRegStr;
+          }
+          var data = prompt("Enter your desire word to check it is a palindrome or not");
+         var check =  palindrome(data);
+         if(check ===false){
+             alert("It is not a palindrome Word");
+         }
+         else{
+             alert("It is a palindrome Word");
+         }
+        </script>
+</body>
+</html>

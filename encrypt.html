@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <style>
+            div {
+                  display: inline-block;
+            }
+      </style>
+</head>
+
+<body>
+      <script>
+            var letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+                  't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+            function encryption() {
+                  var msg = document.getElementById('message').value;
+                  var newmsg = '';
+                  for (var a = 0; a < msg.length; a++) {
+                        newmsg = newmsg + msg.slice(a, a + 1) + "$";
+                        var randomfornumbers = Math.round(Math.random() * 7);
+                        for (var b = 0; b < randomfornumbers; b++) {
+                              var randomforletters = Math.round(Math.random() * 25);
+                              newmsg = newmsg + letter[randomforletters];
+                        }
+                        newmsg = newmsg + "$";
+                  }
+                  document.getElementById('encrypted').innerHTML = "<span id='encryptedmsg'><h1>" + newmsg + "</h1></span> " +
+                        "<button onclick='decrypt()'>Decrypt Message</button>"
+            }
+
+            function decrypt() {
+                  var msg = document.getElementById('encryptedmsg').innerText;
+                  var newmsg = msg.slice(0, 1);
+                  for (var a = 1; a < msg.length; a++) {
+                        if (msg.charAt(a) == "$") {
+                              do {
+                                    a++;
+                              } while (msg.charAt(a) != '$');
+                        } else {
+                              newmsg = newmsg + msg.charAt(a);
+                        }
+                  }
+                  document.getElementById('decrypted').innerHTML = newmsg;
+            }
+      </script>
+      <label> User Message: </label> <input type="text" id="message" />
+      <button onclick="encryption()"> Encrypt Message </button> <br /> <br />
+      <div>
+            <legend> Encrypted Message </legend>
+            <div id="encrypted"> </div><br><br>
+            <div>
+                  <legend> Original Message </legend>
+                  <div id="decrypted"> </div>
+            </div>
+</body>
+
+</html>

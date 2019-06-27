@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+    #wrapper {
+        margin-top:30px;
+        margin-left: 20px;
+        width:75%;  
+    }
+    button{
+        margin-left: 20px;
+        width:300px;
+    }
+    </style>
+    
+    
+</head>
+<body>
+  <div id="wrapper">
+      <h1>Home Assigment</h1>
+    <form action="javaScript:void(0)" method="post" onsubmit="getVal();"> 
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="email Must contain @ and .com" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" id="psd" class="form-control"  placeholder="Password">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+        </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <script>
+            function getVal(){
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("psd").value;
+            
+                var abc = JSON.parse(localStorage.getItem("user"));
+                if(abc.email == email && abc.password == password){
+                    console.log("Wellcome"+ abc.name);
+            }
+             else{
+            console.log("soryy your record is not avalable");
+      }
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+</head>
+
+<body>
+      <h1> Highest Palindrome Words Check Assignment</h1>
+      <div id="data"></div>
+      <div id="daa"></div>
+      <script>
+            var userData = prompt("Enter your desire Word i will Extract the Palindrome Word");
+            var space = []
+            var arr = []
+            for (var i = 0; i < userData.length; i++) {
+                  for (var j = 1; j < userData.length; j++) {
+                        arr.push(userData.slice(i, j + 1));
+                  }
+            }
+            var arrword = [];
+            for (var s = 0; s < arr.length; s++) {
+                  if (arr[s] == "" || arr[s].length == 1) {
+                        space.push(arr[i])
+                  } else {
+                        arrword.push(arr[s])
+                  }
+            }
+            var palindrome = [];
+            for (var i = 0; i < arrword.length; i++) {
+                  var reverse = arrword[i].split("").reverse()
+                  if (arrword[i] == reverse.join("")) {
+                        palindrome.push(arrword[i])
+                  }
+            }
+            document.getElementById("data").innerHTML = "<h2> This is the palindrome Words " + palindrome + "</h2>";
+
+            var aa = 0;
+            var longest;
+
+            for (var i = 0; i < palindrome.length; i++) {
+                  if (palindrome[i].length > aa) {
+                        var aa = palindrome[i].length;
+                        longest = palindrome[i];
+                  }
+            }
+            document.getElementById("daa").innerHTML = "<h2> The Highest  palindrome Words is '" + longest + "'</h2>";
+      </script>
+</body>
+
+</html>
